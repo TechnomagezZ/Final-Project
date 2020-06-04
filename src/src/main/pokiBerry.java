@@ -2,16 +2,12 @@ package src.main;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import org.apache.commons.io.IOUtils;
 import org.json.JSONObject;
 
@@ -42,6 +38,7 @@ public class pokiBerry {
 			String response = IOUtils.toString(openStream);
 			JSONObject root = new JSONObject(response);
 			JSONObject item = (JSONObject) root.get("item");
+
 			final String berName = (String) item.get("name");
 			final Integer berSize = (Integer) root.get("size");
 			final Integer berTime = (Integer) root.get("growth_time");
